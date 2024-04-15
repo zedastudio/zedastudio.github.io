@@ -167,7 +167,7 @@
                             <div class="col-lg-6 col-md-5 col-sm-5 col-6">
                                 <div class="contact__widget__item__text">
                                     <h4>Email</h4>
-                                    <p>studio.zeda@gmail.com</p>
+                                    <p id="email">studio.zeda<span>@</span>gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -520,6 +520,7 @@
         </div>
     </footer>
 
+
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
@@ -531,6 +532,16 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var emailElement = document.getElementById('email');
+            var email = emailElement.textContent.replace('<span>@</span>', '@');
+            emailElement.innerHTML = email;
+        });
+    </script>
+
 </body>
 
 </html>
