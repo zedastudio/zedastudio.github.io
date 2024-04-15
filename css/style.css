@@ -579,10 +579,10 @@ ol {
 
 #work {
   position: relative;
-  < !-- transform: translateY(0);
+  /* < !-- transform: translateY(0);
   /* Initial position */
 
-  transition: transform 0.1s;
+  /*transition: transform 0.1s;
   /* Smooth transition effect */
   padding-top: 510px;
 }
