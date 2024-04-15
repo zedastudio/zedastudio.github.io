@@ -43,9 +43,11 @@
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li class="active"><a href="./index.html">Portfolio</a></li>
 
-                                <li><a href="#" onclick="smoothY('work')">Portfolio</a></li>
+                                <!--
+                                <li><a href="#" onclick="smoothY('gal')">Portfolio</a></li>
+                                -->
                                 <li><a href="./about.html">About</a></li>
 
                                 <!--
@@ -162,10 +164,12 @@
         <!-- Work Section Begin -->
         <section class="work" id="work">
 
-            <!-- Add margin-top to create space -->
-            <li style="margin-top: 1em;"></li>
 
-            <div class="work__gallery">
+
+            <div class="work__gallery" id="gal">
+
+                <li style="margin-top: 1em;"></li>
+
                 <div class="grid-sizer"></div>
 
                 <div class="work__item large__item set-bg" data-setbg="img/work/mare.jpg">
@@ -285,9 +289,8 @@
 
 
             </div>
-        </section>
-        <!-- Work Section End -->
-    </div>
+
+            <!-- Work Section End -->
 
 
 
@@ -296,9 +299,10 @@
 
 
 
-    <!-- Counter Section Begin -->
 
-    <!--
+            <!-- Counter Section Begin -->
+
+            <!--
 
     <section class="counter">
         <div class="container">
@@ -347,11 +351,11 @@
 
 -->
 
-    <!-- Counter Section End -->
+            <!-- Counter Section End -->
 
-    <!-- Team Section Begin -->
+            <!-- Team Section Begin -->
 
-    <!--
+            <!--
 
     <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
         <div class="container">
@@ -431,12 +435,12 @@
 
     -->
 
-    <!-- Team Section End -->
+            <!-- Team Section End -->
 
 
-    <!-- Latest Blog Section Begin -->
+            <!-- Latest Blog Section Begin -->
 
-    <!--
+            <!--
 
     <section class="latest spad">
         <div class="container">
@@ -541,11 +545,11 @@
 
     -->
 
-    <!-- Latest Blog Section End -->
+            <!-- Latest Blog Section End -->
 
-    <!-- Call To Action Section Begin -->
+            <!-- Call To Action Section Begin -->
 
-    <!--
+            <!--
 
     <section class="callto spad set-bg" data-setbg="img/callto-bg.jpg">
         <div class="container">
@@ -563,15 +567,15 @@
 
 -->
 
-    <!-- Call To Action Section End -->
+            <!-- Call To Action Section End -->
 
-    <!-- Footer Section Begin -->
+            <!-- Footer Section Begin -->
 
 
-    <footer class="footer">
-        <div class="container">
+            <footer class="footer">
+                <div class="container">
 
-            <!--
+                    <!--
 
             <div class="footer__top">
                 <div class="row">
@@ -638,23 +642,25 @@
 
             -->
 
-            <div class="footer__copyright">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="footer__copyright__text">Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            All rights reserved
-                        </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <div class="footer__copyright">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <p class="footer__copyright__text">Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                    All rights reserved
+                                </p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+            </footer>
+            <!-- Footer Section End -->
+        </section>
+    </div>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -671,7 +677,7 @@
 
     <script>
         function smoothY(target) {
-            var targetElement = document.getElementById(target);
+            var targetElement = document.getElementById(target)
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop,
@@ -679,6 +685,28 @@
                 });
             }
         }
+    </script>
+    <!--
+    <script>
+        function smoothY(target) {
+            var targetElement = document.getElementById(target);
+            if (targetElement) {
+                var extraPixels = 2000;
+                var targetPosition = targetElement.offsetTop + targetElement.offsetHeight - window.innerHeight + extraPixels;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+-->
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY;
+            var translateYValue = scrollPosition * 0.3; // Adjust the multiplier for the desired effect
+            document.getElementById('work').style.transform = 'translateY(' + translateYValue + 'px)';
+        });
     </script>
 
 

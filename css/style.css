@@ -579,17 +579,21 @@ ol {
 
 #work {
   position: relative;
+  transform: translateY(0);
+  /* Initial position */
+  transition: transform 0.1s;
+  /* Smooth transition effect */
 
 }
 
 .work {
   overflow: hidden;
   background: #000000;
+  padding-top: 510px;
 }
 
 .work__gallery {
-  position: absolute;
-  padding-top: 495px;
+  position: realative;
   margin-right: -10px;
 }
 
