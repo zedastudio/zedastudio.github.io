@@ -456,6 +456,22 @@ ol {
 /*---------------------
   Hero
 -----------------------*/
+
+#parent {
+  position: relative
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  /* Ensure the hero section is above the work section */
+}
+
+
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
   opacity: 1;
@@ -560,12 +576,20 @@ ol {
 /*---------------------
   Work
 -----------------------*/
+
+#work {
+  position: relative;
+
+}
+
 .work {
   overflow: hidden;
   background: #000000;
 }
 
 .work__gallery {
+  position: absolute;
+  padding-top: 495px;
   margin-right: -10px;
 }
 
@@ -612,6 +636,7 @@ ol {
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 50%;
+  z-index: 10;
 }
 
 .grid-sizer {
