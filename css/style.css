@@ -467,7 +467,6 @@ ol {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
   /* Ensure the hero section is above the work section */
 }
 
@@ -584,13 +583,13 @@ ol {
 
   /*transition: transform 0.1s;
   /* Smooth transition effect */
-  padding-top: 510px;
+
 }
 
 .work {
   overflow: hidden;
   background: #000000;
-
+  padding-top: 510px;
 }
 
 .work__gallery {
